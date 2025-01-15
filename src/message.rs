@@ -599,13 +599,20 @@ impl Clone for OwnedHeaders {
 /// to the consumer and don't use any memory inside the consumer buffer.
 #[derive(Debug, Clone)]
 pub struct OwnedMessage {
-    payload: Option<Vec<u8>>,
-    key: Option<Vec<u8>>,
-    topic: String,
-    timestamp: Timestamp,
-    partition: i32,
-    offset: i64,
-    headers: Option<OwnedHeaders>,
+    /// payload
+    pub payload: Option<Vec<u8>>,
+    /// key
+    pub key: Option<Vec<u8>>,
+    /// topic
+    pub topic: String,
+    /// timestamp
+    pub timestamp: Timestamp,
+    /// partition
+    pub partition: i32,
+    /// offset
+    pub offset: i64,
+    /// headers
+    pub headers: Option<OwnedHeaders>,
 }
 
 impl OwnedMessage {
